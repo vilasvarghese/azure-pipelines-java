@@ -21,14 +21,12 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+    
+#Install tomcat directly on the machine and provide permission     
 - task: Bash@3
   inputs:
     targetType: 'inline'
     script: |
-      mkdir ~/tomcat
-      wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.97/bin/apache-tomcat-9.0.97.tar.gz -O /tmp/tomcat.tar.gz
-      cd /tmp && tar xvfz tomcat.tar.gz
-      mv /tmp/apache* ~/tomcat/
-      cp target/*.war ~/tomcat/webapps/
-      ~/tomcat/bin/catalina.sh run
+      cp target/*.war /usr/local/tomcat/webapps/
+      /usr/local/tomcat/bin/catalina.sh run
     failOnStderr: true
