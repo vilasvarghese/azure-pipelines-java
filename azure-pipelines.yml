@@ -6,8 +6,9 @@
 trigger:
 - main
 
-pool: selfhostedlinux
-#  vmImage: ubuntu-latest
+pool: 
+  name: selfhostedlinux
+  demands: Agent.Version -equals 2.144.0
 
 steps:
 - task: Maven@3
