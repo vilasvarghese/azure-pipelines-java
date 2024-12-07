@@ -18,7 +18,7 @@ variables:
   webAppName: 'vilaswebapp'
 
   # Environment name
-  environmentName: 'Sandbox'
+  environmentName: 'ade-sandbox-dc'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
