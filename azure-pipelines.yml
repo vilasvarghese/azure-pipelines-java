@@ -11,7 +11,7 @@ pool:
   demands: Agent.Version -equals 4.248.0
 
 steps:
-- task: Maven@3
+- task: Maven@4
   inputs:
     mavenPomFile: './pom.xml'
 #    mavenOptions: '-Xmx3072m'
@@ -21,3 +21,10 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      cp target/*.war /usr/local/tomcat/webapps/
+      /usr/local/tomcat/bin/catalina.sh run
+    failOnStderr: true
