@@ -8,7 +8,7 @@ trigger:
 
 pool: 
   name: selfhostedlinux
-  demands: Agent.Version -equals 2.144.0
+  demands: Agent.Version -equals 4.248.0
 
 steps:
 - task: Maven@3
