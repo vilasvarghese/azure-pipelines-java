@@ -18,7 +18,7 @@ variables:
   webAppName: 'vilaswebapp'
 
   # Environment name
-  environmentName: 'staging'
+  environmentName: 'Sandbox'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
