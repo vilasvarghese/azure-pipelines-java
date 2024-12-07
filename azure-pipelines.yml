@@ -25,10 +25,10 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      mkdir /usr/local/tomcat
+      mkdir ~/tomcat
       wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.97/bin/apache-tomcat-9.0.97.tar.gz -O /tmp/tomcat.tar.gz
       cd /tmp && tar xvfz tomcat.tar.gz
-      mv /tmp/apache* /usr/local/tomcat/
-      cp target/*.war /usr/local/tomcat/webapps/
-      /usr/local/tomcat/bin/catalina.sh run
+      mv /tmp/apache* ~/tomcat/
+      cp target/*.war ~/tomcat/webapps/
+      ~/tomcat/bin/catalina.sh run
     failOnStderr: true
